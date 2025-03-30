@@ -1,37 +1,44 @@
-# StockInsight
+# 企業分析アプリケーション
 
-This project is designed to provide insights and analysis on stock market trends. It includes various tools and data processing scripts to help users make informed decisions.
+このプロジェクトは、企業の株価データを取得し、分析するためのアプリケーションです。Streamlitを使用してインタラクティブなUIを提供し、GoogleのGenerative AIを利用して企業情報を取得します。
 
-## Project Structure
+## 環境設定手順
 
-- `data/`: Contains datasets and data processing scripts.
-- `src/`: Source code for the application.
-- `.streamlit/`: Configuration files for Streamlit.
-- `requirements.txt`: Lists the Python dependencies required for the project.
-- `.env`: Environment variables for local development.
+1. 必要なパッケージのインストール:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## Getting Started
+2. 環境変数の設定:
+   - `.env`ファイルを作成し、Google APIキーを設定します。
+   ```
+   GOOGLE_API_KEY=your_api_key_here
+   ```
 
-To get started with this project, clone the repository and install the required dependencies:
+3. データファイルの配置:
+   - `data/data_j.csv`をプロジェクトディレクトリに配置します。
 
-```bash
-git clone https://github.com/mtrtrdev/StockInsight.git
-cd StockInsight
-pip install -r requirements.txt
-```
+## アプリケーションの実行方法
 
-## Usage
+1. Streamlitアプリの起動:
+   ```bash
+   streamlit run src/app.py
+   ```
 
-Run the application using Streamlit:
+## 使用方法
 
-```bash
-streamlit run src/app.py
-```
+- Streamlitアプリを起動すると、企業名を選択し、株価データや企業情報を表示することができます。
+- 企業情報はGoogle Generative AIを使用して取得され、マークダウン形式で表示されます。
+- 株価データはyfinanceを使用して取得され、グラフとして表示されます。
 
-## Contributing
+## 依存関係
 
-Contributions are welcome! Please fork the repository and submit a pull request.
+- Python 3.x
+- Streamlit
+- yfinance
+- google-generativeai
+- dotenv
+- pandas
+- matplotlib
 
-## License
-
-This project is licensed under the MIT License.
+このアプリケーションは、企業の株価と情報を簡単に比較・分析するためのツールです。
